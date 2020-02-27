@@ -1,0 +1,7 @@
+package com.es.eoi.entities;
+
+public class Alumno {
+	
+	public Dog dog;
+
+}

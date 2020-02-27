@@ -1,0 +1,29 @@
+package es.eoi.ejerciciojpa.controller;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import es.eoi.ejerciciojpa.entities.Cuenta;
+import es.eoi.ejerciciojpa.service.BancoService;
+import es.eoi.ejerciciojpa.service.ClienteService;
+import es.eoi.ejerciciojpa.service.ClienteServiceImpl;
+
+public class CuentaController {
+
+	public static Cuenta obtenerCuenta(EntityManager em) {
+		Scanner sc =new Scanner (System.in);
+		BancoService bnc = new BancoService(em);	
+		ClienteService cli = new ClienteServiceImpl(em);
+		Cuenta cuent =new Cuenta();
+		
+		System.out.println("Introduzca el dni del cliente");
+		cuent.setCliente(cli.buscarCliente(sc.nextLine()));
+		System.out.println("Introduzca el id del banco");
+		cuent.setBanco(bnc.buscarBanco(sc.nextLine()));
+		System.out.println("Introduzca el salario de la cuenta");
+		cuent.setSalario(sc.nextInt());
+				
+		return cuent;
+	}
+}

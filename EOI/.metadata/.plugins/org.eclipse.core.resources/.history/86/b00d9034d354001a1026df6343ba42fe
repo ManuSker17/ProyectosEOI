@@ -1,0 +1,8 @@
+package es.eoi.springboot.repository;
+
+public class HelloWorldRepositoryImpl {
+	
+	public String helloWorld() {
+		return "Hello World!";
+		}
+}

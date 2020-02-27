@@ -1,0 +1,9 @@
+package es.eoi.ejerciciojpa;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class EntityManagerConf {
+	
+
+}

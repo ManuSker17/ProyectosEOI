@@ -1,0 +1,11 @@
+package es.eoi.repository;
+
+import org.springframework.stereotype.Repository;
+
+	@Repository
+	public class HelloWorldRepositoryImpl {
+		public String saluda() {
+			return "Hola";
+		}
+	}
+

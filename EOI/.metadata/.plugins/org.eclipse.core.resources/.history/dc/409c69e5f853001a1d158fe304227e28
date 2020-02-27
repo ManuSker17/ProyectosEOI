@@ -1,0 +1,6 @@
+package com.es.eoi;
+
+@Configuration
+public class Config {
+
+}

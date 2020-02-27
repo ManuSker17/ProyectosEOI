@@ -1,0 +1,14 @@
+package es.eoi.springboot;
+
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
+public class DemoController {
+	
+	@RequestMapping("/hello")
+	public String index(HttpServletRequest request) {
+		System.out.println(request.getRemoteAddr());
+		return "Hola desde el controller";
+	}
+
+}

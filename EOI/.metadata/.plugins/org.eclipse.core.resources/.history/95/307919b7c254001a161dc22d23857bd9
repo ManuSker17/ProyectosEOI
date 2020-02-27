@@ -1,0 +1,135 @@
+package es.eoi.ejerciciojpa.UI;
+
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import static es.eoi.ejerciciojpa.controller.BancoControllerImpl.*;
+
+public class UImenu {
+
+	private static EntityManager em;
+	// private BancoController bncontroller;
+
+	public UImenu(EntityManager em) {
+		super();
+		this.em = em;
+		// bncontroller=new BancoController(em);
+	}
+
+	public static void Menu(EntityManager em) {
+
+		Scanner sc = new Scanner(System.in);
+		int select = 1;
+		boolean check = false;
+
+		ViewEnum enum_select;
+
+		do {
+
+			imprimirMenuGeneral();
+			enum_select = ViewEnum.values()[sc.nextInt()];
+			// select = sc.nextInt();
+			if (sc.hasNextLine())
+				sc.nextLine();
+
+			switch (enum_select) {
+			case QUIT:
+				System.out.println("Hasta nuki");
+				select = 0;
+				break;
+			case CLIENTE:
+				menuCliente();
+				break;
+			case BANCO:
+				menuBanco();
+				break;
+			case CUENTA:
+				menuCuenta();
+				break;
+			default:
+				System.out.println("Error");
+				break;
+			}
+			System.out.println("");
+		} while (select != 0);
+
+	}
+
+	private static void menuBanco() {
+
+		ViewCRUD enum_select;
+		int select = 1;
+		Scanner sc = new Scanner(System.in);
+		do {
+
+			imprimirMenuBanco();
+			enum_select = ViewCRUD.values()[sc.nextInt()];
+
+			switch (enum_select) {
+			case QUIT:
+				System.out.println("Hasta nuki");
+				break;
+			case MOSTRAR:
+				mostrarBancos(em);
+				break;
+			case BUSCAR:
+				selectBanco(em);
+				break;
+			case CREAR:
+				crearBanco(em);
+				break;
+			case MODIFICAR:
+				updateBanco(em);
+				break;
+			case ELIMINAR:
+				removeBanco(em);
+				break;
+			default:
+				System.out.println("Error");
+				break;
+			}
+			System.out.println("");
+		} while (select != 0);
+
+	}
+
+	private static void menuCliente() {
+	}
+
+	/*
+	 * ViewCRUD enum_select; Scanner sc = new Scanner(System.in); do {
+	 * 
+	 * imprimirMenuCliente(); enum_select = ViewCRUD.values()[sc.nextInt()];
+	 * 
+	 * switch (enum_select) { case QUIT: System.out.println("Hasta nuki"); break;
+	 * case MOSTRAR: mostrarBanco(); break; case BUSCAR: bancoMenu(); break; case
+	 * CREAR: cuentaMenu(); break; case MODIFICAR: cuentaMenu(); break; case
+	 * ELIMINAR: cuentaMenu(); break; default: System.out.println("Error"); break; }
+	 * System.out.println(""); } while (enum_select != 0);
+	 * 
+	 * }
+	 */
+	private static void menuCuenta() {
+	}
+
+	private static void imprimirMenuGeneral() {
+
+		System.out.println("GESTION V1\n-----------------------\n" + "1- Clientes\n" + "2- Bancos\n" + "3- Cuentas\n"
+				+ "0- SALIR\n-----------------------");
+	}
+
+	private static void imprimirMenuCliente() {
+
+		System.out.println("GESTION V1\n-----------------------\n" + "1- Listado Clientes\n"
+				+ "2- Buscar Cliente (DNI)\n" + "3- Crear Cliente\n" + "4- Modificar Cliente\n"
+				+ "5- Eliminar Cliente\n" + "0- SALIR\n-----------------------");
+	}
+
+	private static void imprimirMenuBanco() {
+
+		System.out.println("GESTION V1\n-----------------------\n" + "1- Listado Banco\n" + "2- Buscar Banco (DNI)\n"
+				+ "3- Crear Banco\n" + "4- Modificar Banco\n" + "5- Eliminar Banco\n"
+				+ "0- SALIR\n-----------------------");
+	}
+}

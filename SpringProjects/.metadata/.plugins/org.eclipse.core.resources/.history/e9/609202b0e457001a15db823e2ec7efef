@@ -1,0 +1,11 @@
+package es.eoi.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import es.eoi.entity.*;
+
+public interface CuentaRepository extends JpaRepository<Cliente, Integer>{
+
+}

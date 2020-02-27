@@ -1,0 +1,9 @@
+package es.eoi.ejerciciojpa.controller;
+
+import es.eoi.ejerciciojpa.entities.Cliente;
+
+public interface ClienteController {
+
+	Cliente obtenercliente();
+
+}

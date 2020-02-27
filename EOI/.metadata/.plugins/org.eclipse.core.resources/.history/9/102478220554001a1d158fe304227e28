@@ -1,0 +1,11 @@
+package com.es.eoi.entities;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+@Component
+public class Alumno {
+	
+	@Autowired
+	public Dog dog;
+
+}

@@ -1,0 +1,5 @@
+package es.eoi.springboot.repository;
+
+public class HelloWorldRepositoryImpl {
+
+}

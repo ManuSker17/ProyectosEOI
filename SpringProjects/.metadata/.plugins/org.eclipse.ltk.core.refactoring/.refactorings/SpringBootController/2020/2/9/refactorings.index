@@ -1,0 +1,6 @@
+1582558638003	Rename package 'es.eoi.SpringBootController'
+1582558904091	Extract interface 'HelloWorldService'
+1582558923251	Rename type 'Service'
+1582558950775	Delete element
+1582558983726	Rename type 'HelloWorldRepository'
+1582559055586	Extract interface 'HelloWorldRepository'

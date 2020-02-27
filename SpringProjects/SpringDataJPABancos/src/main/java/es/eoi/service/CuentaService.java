@@ -1,0 +1,19 @@
+package es.eoi.service;
+
+import java.util.List;
+
+import es.eoi.entity.Cuenta;
+
+public interface CuentaService {
+
+	List<Cuenta> MostrarCuenta();
+
+	Cuenta InsertarCuenta(Cuenta cuenta);
+
+	Cuenta buscarCuenta(String dni, int id);
+
+	Cuenta updateCuenta(Cuenta cuenta);
+
+	void removeCuenta(int id);
+
+}

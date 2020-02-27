@@ -1,0 +1,11 @@
+package com.es.eoi.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.es.eoi.services.AlumnoService;
+
+public class AlumnoController {
+	@Autowired
+	private AlumnoService service;
+
+}

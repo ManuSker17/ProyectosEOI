@@ -1,0 +1,19 @@
+package com.es.eoi;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.es.eoi.controller.AlumnoController;
+import com.es.eoi.entities.Alumno;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ApplicationContext appcontext = new AnnotationConfigApplicationContext(Config.class);
+		AlumnoController controller = appcontext.getBean(AlumnoController.class);
+		Alumno	alu	= appcontext.getBean(Alumno.class);
+		System.out.println(alu.dog.name);
+	}
+
+}

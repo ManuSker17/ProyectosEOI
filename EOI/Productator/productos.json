@@ -1,0 +1,24 @@
+{
+	"Producto":{
+	"codigo": "0001",
+	"nombre": "tomate",
+	"descripcion": "Tomate rico",
+	"precio":1,
+	"stock":200,
+	"IVA":6,
+	"ventas":50,
+	"categoria":"ALIMENTACION"}
+},
+{
+	"Producto": {
+	"codigo":"0002",
+	"nombre": "alcachofa",
+	"descripcion": "Alcahofa rica",
+	"precio": "2",
+	"IVA":6,
+	"stock":"50",
+	"vendidos":"2",
+	"categoria":"ALIMENTACION"
+	}
+}
+	

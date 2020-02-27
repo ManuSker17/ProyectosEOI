@@ -1,0 +1,52 @@
+package es.eoi.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import es.eoi.entity.Banco;
+import es.eoi.repository.BancoRepository;
+
+@Service
+public class BancoServiceImpl implements BancoService, BancoService {
+	
+	@Autowired
+	BancoRepository bancrepo;
+
+
+	@Override
+	public List<Banco> MostrarBancos() {
+		return bancrepo.findAll();
+	}
+
+	@Override
+	public Banco InsertarBanco(Banco banc) {
+		return bancrepo.save(banc);
+	}
+
+	@Override
+	public Banco buscarBancobyName(String name) {
+
+		return bancrepo.findByName(name);
+
+	}
+	@Override
+	public Optional<Banco> buscarBancobyId(Integer id) {
+
+		return bancrepo.findById(id);
+
+	}
+
+	@Override
+	public Banco updateBanco(Banco banc) {
+		return bancrepo.save(banc);
+	}
+
+	@Override
+	public void removeBancobyName(int id) {
+		bancrepo.deleteById(id);
+	}
+
+}

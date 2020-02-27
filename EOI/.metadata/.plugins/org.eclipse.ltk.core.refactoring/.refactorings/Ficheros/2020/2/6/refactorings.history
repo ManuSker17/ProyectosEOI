@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Archivo.java&apos; to &apos;Pokemon/src/com.es.eoi.beca.pokemon.utils&apos;&#x0D;&#x0A;- Original project: &apos;Ficheros&apos;&#x0D;&#x0A;- Destination element: &apos;Pokemon/src/com.es.eoi.beca.pokemon.utils&apos;&#x0D;&#x0A;- Original element: &apos;utileria.Archivo.java&apos;" description="Copy compilation unit" destination="=Pokemon/src&lt;com.es.eoi.beca.pokemon.utils" element1="/src&lt;utileria{Archivo.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1580833811522" units="1" version="1.0"/>
+</session>

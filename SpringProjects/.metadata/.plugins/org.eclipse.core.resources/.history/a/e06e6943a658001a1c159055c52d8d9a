@@ -1,0 +1,27 @@
+package es.eoi.dto;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CuentaDto {
+	private String dni;
+	private int id;
+	private int salario;
+
+	public CuentaDto() {
+	}
+
+	public CuentaDto(int salario) {
+		super();
+		this.salario = salario;
+
+	}
+
+	@Override
+	public String toString() {
+		return "Cuenta [id=" + id + ", salario=" + salario + "]";
+	}
+
+}

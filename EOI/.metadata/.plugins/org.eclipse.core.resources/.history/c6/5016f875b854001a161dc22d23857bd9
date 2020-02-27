@@ -1,0 +1,17 @@
+package es.eoi.ejerciciojpa;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class EntityManagerConf {
+	
+	EntityManager em;
+	public EntityManagerConf () {
+
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("ClientesSucursalesPU");
+		em = emf.createEntityManager();
+	}
+}

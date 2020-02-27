@@ -1,0 +1,6 @@
+package com.es.eoi.repositories;
+
+@Repository
+public class AlumnoRepositoryImp implements AlumnoRepository {
+
+}

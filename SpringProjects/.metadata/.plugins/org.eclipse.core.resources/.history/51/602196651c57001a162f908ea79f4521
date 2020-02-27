@@ -1,0 +1,5 @@
+package es.eoi.repository;
+
+public class HelloWorldRepositoryImpl {
+
+}

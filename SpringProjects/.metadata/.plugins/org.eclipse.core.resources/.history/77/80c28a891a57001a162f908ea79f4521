@@ -1,0 +1,13 @@
+package es.eoi.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController(value="/hello")
+public class HelloWorldController {
+	
+	@GetMapping
+	public String getHello() {
+		
+		return "hello world";
+	}
+}

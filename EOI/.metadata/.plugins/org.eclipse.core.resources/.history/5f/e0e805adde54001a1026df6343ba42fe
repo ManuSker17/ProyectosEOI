@@ -1,0 +1,11 @@
+package es.eoi.ejerciciojpa.controller;
+
+import javax.persistence.EntityManager;
+
+import es.eoi.ejerciciojpa.entities.Cuenta;
+
+public interface CuentraController {
+
+	Cuenta obtenerCuenta(EntityManager em);
+
+}

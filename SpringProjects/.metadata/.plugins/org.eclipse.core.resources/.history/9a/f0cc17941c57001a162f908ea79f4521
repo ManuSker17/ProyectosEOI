@@ -1,0 +1,13 @@
+package es.eoi.service;
+
+public class HelloWorldServiceImpl implements HelloWorldService {
+
+	@Autowired
+	private HelloWorldRepositoryImpl repository;
+
+	@Override
+	public String saluda() {
+		return repository.saluda();
+	}
+
+}

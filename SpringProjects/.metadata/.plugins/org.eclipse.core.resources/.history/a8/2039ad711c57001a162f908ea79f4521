@@ -1,0 +1,11 @@
+package es.eoi.repository;
+
+public class HelloWorldRepositoryImpl {
+
+	@Repository
+	public class HelloWorldRepositoryImpl implements HelloWorldRepository {
+		public String saluda() {
+			return "Hola";
+		}
+	}
+}

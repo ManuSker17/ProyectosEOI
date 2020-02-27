@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.egit.ui.internal.clone.GitSelectWizardPageWizardSel" value="2"/>
+	<item key="GitSelectRepositoryPage.lastRepository" value="C:\Manuel\JJRepo\shop\onlineshop\.git"/>
+	<list key="RepositorySelectionPage.UsedUris">
+		<item value="https://github.com/jotajota1302/onlineshop.git"/>
+		<item value="https://github.com/jotajota1302/pokemon.git"/>
+	</list>
+	<list key="EGit.KnownHosts">
+		<item value="git.eclipse.org"/>
+		<item value="bitbucket.org"/>
+		<item value="github.com"/>
+	</list>
+	<section name="GitImportWizard">
+		<item key="GitProjectsImportPage.STORE_NESTED_PROJECTS" value="false"/>
+	</section>
+</section>

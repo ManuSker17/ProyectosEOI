@@ -1,0 +1,83 @@
+package es.eoi.repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import es.eoi.entity.Cliente;
+
+@Repository
+public class ClienteRepositoryImpl implements ClienteRepository {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	public List<Cliente> MostrarClientes() {
+
+		String hql = "FROM Cliente";
+		Query query = em.getEm().createQuery(hql);
+		List<Cliente> clientes = null;
+		clientes = query.getResultList();
+		return clientes;
+	}
+
+	public boolean InsertarCliente(Cliente cli) {
+		boolean result = false;
+		try {
+			em.getEm().getTransaction().begin();
+			em.getEm().persist(cli);
+
+			em.getEm().getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getEm().getTransaction().rollback();
+		}
+		return result;
+	}
+
+	public Cliente buscarCliente(String dni) {
+
+		return em.getEm().find(Cliente.class, dni);
+
+	}
+
+	public boolean updateCliente(String dni, String name, String direccion) {
+
+		boolean result = false;
+		try {
+			Cliente cli = buscarCliente(dni);
+			cli.setName(name);
+			cli.setDireccion(direccion);
+			em.getEm().getTransaction().begin();
+			em.getEm().merge(cli);
+
+			em.getEm().getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getEm().getTransaction().rollback();
+		}
+		return result;
+	}
+
+	public boolean removeCliente(String dni) {
+		boolean result = false;
+		try {
+			Cliente cli = buscarCliente(dni);
+			em.getEm().getTransaction().begin();
+			em.getEm().remove(cli);
+
+			em.getEm().getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getEm().getTransaction().rollback();
+		}
+		return result;
+	}
+}

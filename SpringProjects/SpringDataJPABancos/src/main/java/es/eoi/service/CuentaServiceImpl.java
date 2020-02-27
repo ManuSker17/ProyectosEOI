@@ -1,0 +1,43 @@
+package es.eoi.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import es.eoi.entity.Cuenta;
+import es.eoi.repository.CuentaRepository;
+
+@Service
+public class CuentaServiceImpl implements CuentaService {
+
+	@Autowired
+	CuentaRepository cuentrepo;
+
+	@Override
+	public List<Cuenta> MostrarCuenta() {
+		return cuentrepo.findAll();
+	}
+
+	@Override
+	public Cuenta InsertarCuenta(Cuenta cuenta) {
+		return cuentrepo.save(cuenta);
+	}
+
+	@Override
+	public Cuenta buscarCuenta(String dni,int id) {
+		
+		return cuentrepo.findByDniAndIdbanco(dni,id);
+
+	}
+
+	@Override
+	public Cuenta updateCuenta(Cuenta cuenta) {
+		return cuentrepo.save(cuenta);
+	}
+
+	@Override
+	public void removeCuenta(int id) {
+		cuentrepo.deleteById(id);
+	}
+}

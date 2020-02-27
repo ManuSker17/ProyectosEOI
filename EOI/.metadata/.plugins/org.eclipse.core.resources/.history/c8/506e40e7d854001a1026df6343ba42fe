@@ -1,0 +1,13 @@
+package es.eoi.springboot;
+
+import javax.servlet.http.HttpServletRequest;
+
+@Controller
+public class DemoController {
+	
+	@RequestMapping("/hello")
+	public String index(HttpServletRequest request) {
+		return "Hola desde el controller";
+	}
+
+}

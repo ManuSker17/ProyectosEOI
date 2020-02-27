@@ -1,0 +1,28 @@
+1582295972905	Rename type 'EntityManager'
+1582295983022	Delete element
+1582296507577	Rename type 'BancoRepositorio'
+1582296546727	Extract interface 'BancoRepository'
+1582296565557	Rename type 'BancoRepositorioImpl'
+1582296579237	Rename type 'ClienteRepository'
+1582296637768	Extract interface 'ClienteRepository'
+1582296673034	Rename type 'CuentaRepositorio'
+1582296727766	Extract interface 'CuentaRepository'
+1582296775725	Rename type 'CuentaService'
+1582296825010	Extract interface 'CuentaService'
+1582296841578	Rename type 'ClienteService'
+1582296888392	Extract interface 'ClienteService'
+1582296909935	Rename type 'BancoService'
+1582296958219	Extract interface 'BancoService'
+1582297014747	Rename type 'CuentaController'
+1582299493154	Extract interface 'CuentraController'
+1582299509644	Rename type 'ClienteController'
+1582300497631	Extract interface 'ClienteController'
+1582300524671	Rename type 'BancoController'
+1582300546300	Extract interface 'BancoController'
+1582312441354	Delete element
+1582312543458	Delete element
+1582312592735	Delete element
+1582312595069	Delete element
+1582312637773	Copy compilation unit
+1582312713131	Delete element
+1582314514126	Delete element

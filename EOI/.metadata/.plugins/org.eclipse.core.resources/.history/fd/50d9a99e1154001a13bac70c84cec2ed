@@ -1,0 +1,50 @@
+package com.es.eoi.shop;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.es.eoi.shop.Config;
+import com.es.eoi.shop.entities.Order;
+import com.es.eoi.shop.entities.User;
+import com.es.eoi.shop.entities.Warehouse;
+import com.es.eoi.shop.managers.ArticleManager;
+import com.es.eoi.shop.managers.OrderManager;
+import com.es.eoi.shop.managers.UserManager;
+import com.es.eoi.shop.views.Menu;
+
+public class Main {
+
+	public static Warehouse warehouse;
+	public static List<User> users;
+	public static List<Order> orders;
+	public static ArticleManager articleManager;
+	public static OrderManager orderManager;
+	public static UserManager userManager;
+	public static ApplicationContext context;
+	public static void main(String[] args) {
+
+		initWarehouse();
+
+		Menu.printMainMenu();
+
+	}
+
+	public static void initWarehouse() {
+
+		context = new AnnotationConfigApplicationContext(Config.class);
+		//warehouse = context.getBean(Warehouse.class);
+
+		users = new ArrayList<User>();
+		orders = new ArrayList<Order>();
+
+		articleManager = context.getBean(ArticleManager.class);
+		userManager = new UserManager(users);
+		orderManager = new OrderManager(orders);
+
+	}
+
+}

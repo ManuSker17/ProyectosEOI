@@ -1,0 +1,6 @@
+package es.eoi.controller;
+
+@RestController(value="/hello")
+public class HelloWorldController {
+
+}

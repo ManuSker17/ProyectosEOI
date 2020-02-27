@@ -1,0 +1,17 @@
+package es.eoi.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import es.eoi.repository.HelloWorldRepositoryImpl;
+
+public class HelloWorldServiceImpl implements HelloWorldService {
+
+	@Autowired
+	private HelloWorldRepository repository;
+
+	@Override
+	public String saluda() {
+		return repository.saluda();
+	}	
+
+}

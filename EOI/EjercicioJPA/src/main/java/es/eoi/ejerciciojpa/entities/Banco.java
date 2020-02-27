@@ -1,0 +1,52 @@
+package es.eoi.ejerciciojpa.entities;
+
+import java.util.List;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name="Bancos")
+public class Banco {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	@Column(name="nombre")
+	private String name;
+	@Column(name="ciudad")
+	private String ciudad;
+	
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="banco")
+	private List<Cuenta> listCuentas;
+	
+	public Banco() {}
+	public Banco(String name, String ciudad) {
+		super();
+		this.name = name;
+		this.ciudad = ciudad;
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getCiudad() {
+		return ciudad;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setCiudad(String ciudad) {
+		this.ciudad = ciudad;
+	}
+	@Override
+	public String toString() {
+		return "Banco [id=" + id + ", name=" + name + ", ciudad=" + ciudad +  "]";
+	}
+	
+	
+	
+}

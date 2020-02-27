@@ -1,0 +1,86 @@
+package es.eoi.repository;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+
+import org.springframework.stereotype.Repository;
+
+import es.eoi.entity.Banco;
+
+@Repository
+public class BancoRepositoryImpl implements BancoRepository {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	public List<Banco> MostrarBancos() {
+
+		String hql = "FROM Banco";
+		Query query = em.createQuery(hql);
+		List<Banco> bancos = null;
+		bancos = query.getResultList();
+		return bancos;
+	}
+
+	public boolean InsertarBanco(Banco banc) {
+		boolean result = false;
+		try {
+			em.getTransaction().begin();
+			em.persist(banc);
+
+			em.getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getTransaction().rollback();
+		}
+		return result;
+	}
+
+	public Banco buscarBanco(String name) {
+
+		String hql = "FROM Banco WHERE NOMBRE LIKE :parameter";
+		Query query = em.createQuery(hql);
+		query.setParameter("parameter", name);
+		return (Banco) query.getSingleResult();
+
+	}
+
+	public boolean updateBanco(String oldname, String newname, String ciudad) {
+
+		boolean result = false;
+		try {
+			Banco banc = buscarBanco(oldname);
+			banc.setName(newname);
+			banc.setCiudad(ciudad);
+			em.getTransaction().begin();
+			em.merge(banc);
+
+			em.getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getTransaction().rollback();
+		}
+		return result;
+	}
+
+	public boolean removeBanco(String name) {
+		boolean result = false;
+		try {
+			Banco banc = buscarBanco(name);
+			em.getTransaction().begin();
+			em.remove(banc);
+
+			em.getTransaction().commit();
+			result = true;
+		} catch (Exception s) {
+			s.printStackTrace();
+			em.getTransaction().rollback();
+		}
+		return result;
+	}
+}

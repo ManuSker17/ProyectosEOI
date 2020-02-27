@@ -1,0 +1,19 @@
+package es.eoi.ejerciciojpa.service;
+
+import java.util.List;
+
+import es.eoi.ejerciciojpa.entities.Cliente;
+
+public interface ClienteService {
+
+	List<Cliente> MostrarCliente();
+
+	boolean InsertarCliente(Cliente client);
+
+	Cliente buscarCliente(String dni);
+
+	boolean updateCliente(String dni, String name, String direccion);
+
+	boolean removeCliente(String dni);
+
+}

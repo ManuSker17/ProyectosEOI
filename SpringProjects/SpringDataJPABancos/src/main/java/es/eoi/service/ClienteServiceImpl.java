@@ -1,0 +1,44 @@
+package es.eoi.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import es.eoi.entity.Cliente;
+import es.eoi.repository.ClienteRepository;
+
+@Service
+public class ClienteServiceImpl implements ClienteService {
+
+	@Autowired
+	ClienteRepository clientrepo;
+
+	@Override
+	public List<Cliente> MostrarCliente() {
+		return clientrepo.findAll();
+	}
+
+	@Override
+	public Cliente InsertarCliente(Cliente client) {
+		return clientrepo.save(client);
+	}
+
+	@Override
+	public Optional<Cliente> buscarCliente(String dni) {
+
+		return clientrepo.findById(dni);
+
+	}
+
+	@Override
+	public Cliente updateCliente(Cliente cliente) {
+		return clientrepo.save(cliente);
+	}
+
+	@Override
+	public void removeCliente(String dni) {
+		clientrepo.deleteById(dni);
+	}
+}

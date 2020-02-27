@@ -1,0 +1,9 @@
+package es.eoi.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import es.eoi.entity.Banco;
+
+public interface BancoRepository extends JpaRepository<Banco, Integer>{
+
+}

@@ -1,0 +1,6 @@
+package com.es.eoi.entities;
+
+public class Dog {
+	
+	public String name = "Bobby";
+}

@@ -1,0 +1,28 @@
+package es.eoi.ejerciciojpa.controller;
+
+import java.util.List;
+import java.util.Scanner;
+
+import javax.persistence.EntityManager;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import es.eoi.ejerciciojpa.entities.Banco;
+import es.eoi.ejerciciojpa.service.BancoService;
+
+@RestController
+public class BancoControllerImpl {
+
+	@Autowired
+	private BancoService bncserv;
+	private Scanner sc = new Scanner(System.in);
+
+	@RequestMapping("/banco")
+	public Banco selectBanco(EntityManager em) {
+		System.out.println("Printeamos el banco BBVA"+bncserv.buscarBanco("BBVA"));
+		return bncserv.buscarBanco("BBVA");
+
+	}
+}

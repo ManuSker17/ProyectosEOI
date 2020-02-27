@@ -1,0 +1,17 @@
+package es.eoi.springboot;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RestController
+public class DemoController {
+	
+	@RequestMapping("/hello")
+	public String index(HttpServletRequest request) {
+		System.out.println(request.getRemoteAddr());
+		return "Hola desde el controller";
+	}
+
+}

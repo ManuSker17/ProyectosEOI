@@ -1,0 +1,9 @@
+1582561736473	Rename package 'es.eoi.SpringJPABANCOS'
+1582561779233	Rename type 'BancoControllerImpl'
+1582561800340	Rename type 'ClienteControllerImpl'
+1582561808430	Rename type 'CuentaControllerImpl'
+1582571107837	Copy compilation units
+1582571126220	Rename type 'Banco'
+1582571137679	Rename type 'Cliente'
+1582571144832	Rename type 'Cuenta'
+1582572921797	Rename compilation unit 'Config.java'

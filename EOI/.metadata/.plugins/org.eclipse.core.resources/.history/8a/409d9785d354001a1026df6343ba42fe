@@ -1,0 +1,15 @@
+package es.eoi.springboot.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class HelloWorldServiceImpl implements HelloWorldService {
+
+	@Autowired
+	private HelloWorldRepository hrepo;
+	@Override
+	public String helloWorld() {
+
+		return null;
+	}
+
+}

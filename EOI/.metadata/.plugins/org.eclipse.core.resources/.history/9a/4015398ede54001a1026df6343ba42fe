@@ -1,0 +1,21 @@
+package es.eoi.ejerciciojpa.controller;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
+import es.eoi.ejerciciojpa.entities.Banco;
+
+public interface BancoController {
+
+	boolean crearBanco(EntityManager em);
+
+	boolean removeBanco(EntityManager em);
+
+	List<Banco> mostrarBancos(EntityManager em);
+
+	boolean updateBanco(EntityManager em);
+
+	Banco selectBanco(EntityManager em);
+
+}

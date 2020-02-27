@@ -1,0 +1,5 @@
+package com.es.eoi.services;
+
+public class AlumnoServiceImpl implements AlumnoService {
+
+}

@@ -1,0 +1,5 @@
+package es.eoi.ejerciciojpa;
+
+public @interface EntityManagerApp {
+
+}
